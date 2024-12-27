@@ -38,6 +38,11 @@ def mark_complete(tasks):
         if 1 <= marked_task <= len(tasks):
             tasks[marked_task - 1] 
             print(f"Task {marked_task} is now complete.")
+
+        if 0 <= marked_task < len(tasks):
+            removed_task = tasks.pop(marked_task)
+            print(f"Task '{removed_task}' marked as complete and removed. ")
+
         else:
             print("Invalid task number.")
 
@@ -57,7 +62,7 @@ def remove_task(tasks):
             remove_task = tasks.pop(task_number - 1)
             print(f"Task {remove_task} has been removed. ")
         else:
-            print("Invalid task number.") #this prints no matter what task I choose to remove
+            print("Invalid task number.") 
 
     except AttributeError:
             print("Please enter a valid task number.")
@@ -93,3 +98,5 @@ def main():
       
 if __name__ == "__main__":
     main()
+
+
